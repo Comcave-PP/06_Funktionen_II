@@ -11,24 +11,56 @@
 4. Ausgabe in Konsole : check!
 */
 
-//Konstanten
-const ERROR_STR_DIV = "Man darf nicht durch Null teilen!!";
-const ERROR_STR_GEN = "Ungültige Eingabe";
+// Konstanten
+const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
+const ERROR_STR_GEN = "Irgendetwas ging schief!"
+
+// startApp();
+function startApp()
+{
+	output(calculator(getNumber1(),getNumber2(),getOp()));
+}
+
+function getNumber1()
+{
+	return parseInt(prompt("Zahl 1 eingeben:"));
+}
+
+function getNumber2()
+{
+	return parseInt(prompt("Zahl 2 eingeben:"));
+}
+
+// module: operator input| Test:
+output(getOp());
+function getOp() {
+
+	let op = prompt("Operator eingeben:");
+	
+	if (op == "+" || op == "-" || op == "*" || op == "/" || op == ":") {
+
+		return op;
+	
+	} else {
+	
+		return ERROR_STR_GEN;
+	
+	}
+
+}
+
+
 
 // module: calculator
 
 // test Kursversion
-output(calculator(3,2,"+"));
-output(calculator(3,2,"-"));
-output(calculator(3,2,"*"));
-output(calculator(3,2,":"));
-output(calculator(3,2,"/"));
-output(calculator(3,0,"/"));
-output(calculator(3,2,"#?!"));
-
-// test meiner Version
-// output(calculator());
-
+// output(calculator(3,2,"+"));
+// output(calculator(3,2,"-"));
+// output(calculator(3,2,"*"));
+// output(calculator(3,2,":"));
+// output(calculator(3,2,"/"));
+// output(calculator(3,0,"/"));
+// output(calculator(3,2,"#?!"));
 
 // Kursversion
 function calculator(a,b,op)
@@ -49,6 +81,8 @@ function calculator(a,b,op)
 }
 
 
+// test meiner Version
+// output(calculator());
 
 // Meine Version!!!
 // function calculator()
