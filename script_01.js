@@ -15,7 +15,7 @@
 const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
 const ERROR_STR_GEN = "Irgendetwas ging schief!"
 
-// startApp();
+startApp();
 function startApp()
 {
 	output(calculator(getNumber1(),getNumber2(),getOp()));
@@ -32,12 +32,13 @@ function getNumber2()
 }
 
 // module: operator input| Test:
-output(getOp());
-function getOp() {
+// output(getOp());
+function getOp() 
+{
 
 	let op = prompt("Operator eingeben:");
 	
-	if (op == "+" || op == "-" || op == "*" || op == "/" || op == ":") {
+	if (isOpValid(op)) {
 
 		return op;
 	
@@ -46,7 +47,13 @@ function getOp() {
 		return ERROR_STR_GEN;
 	
 	}
+}
 
+
+// Überprüfung der Gültigkeit des Operators
+function isOpValid(op)
+{
+	return op == "+" || op == "-" || op == "*" || op == "/" || op == ":";
 }
 
 
