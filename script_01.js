@@ -15,46 +15,46 @@
 const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
 const ERROR_STR_GEN = "Irgendetwas ging schief!"
 
-startApp();
-function startApp()
-{
-	output(calculator(getNumber1(),getNumber2(),getOp()));
-}
+// startApp();
+// function startApp()
+// {
+// 	output(calculator(getNumber1(),getNumber2(),getOp()));
+// }
 
-function getNumber1()
-{
-	return parseInt(prompt("Zahl 1 eingeben:"));
-}
+// function getNumber1()
+// {
+// 	return parseInt(prompt("Zahl 1 eingeben:"));
+// }
 
-function getNumber2()
-{
-	return parseInt(prompt("Zahl 2 eingeben:"));
-}
+// function getNumber2()
+// {
+// 	return parseInt(prompt("Zahl 2 eingeben:"));
+// }
 
-// module: operator input| Test:
-// output(getOp());
-function getOp() 
-{
+// // module: operator input| Test:
+// // output(getOp());
+// function getOp() 
+// {
 
-	let op = prompt("Operator eingeben:");
+// 	let op = prompt("Operator eingeben:");
 	
-	if (isOpValid(op)) {
+// 	if (isOpValid(op)) {
 
-		return op;
+// 		return op;
 	
-	} else {
+// 	} else {
 	
-		return ERROR_STR_GEN;
+// 		return ERROR_STR_GEN;
 	
-	}
-}
+// 	}
+// }
 
 
-// Überprüfung der Gültigkeit des Operators
-function isOpValid(op)
-{
-	return op == "+" || op == "-" || op == "*" || op == "/" || op == ":";
-}
+// // Überprüfung der Gültigkeit des Operators
+// function isOpValid(op)
+// {
+// 	return op == "+" || op == "-" || op == "*" || op == "/" || op == ":";
+// }
 
 
 
@@ -89,37 +89,37 @@ function calculator(a,b,op)
 
 
 // test meiner Version
-// output(calculator());
+output(calculator());
 
-// Meine Version!!!
-// function calculator()
-// {
-//     let a = parseInt(prompt("Zahl eingeben"));
-//     let op = prompt("Operator eingeben");
-//     let b = parseInt(prompt("Weitere Zahl eingeben"));
+//Meine Version!!!
+function calculator()
+{
+    let a = parseInt(prompt("Zahl eingeben"));
+    let op = prompt("Operator eingeben");
+    let b = parseInt(prompt("Weitere Zahl eingeben"));
 
-// 	if(isNaN(a) == true || isNaN(b) == true)
-// 	{
-// 		return ERROR_STR_GEN;
-// 	}
+	if(isNaN(a) || isNaN(b))
+	{
+		return ERROR_STR_GEN;
+	}
 
-//     switch(op)
-//     {
-//         case "+":
-//             return add(a,b);
-//         case "-":
-//             return sub(a,b);
-//         case "*":
-//             return mult(a,b);
-//         case "/":
-//         case ":":
-//             return div(a,b);
-//         default:
-//             return ERROR_STR_GEN;
-//     }
+    switch(op)
+    {
+        case "+":
+            return add(a,b);
+        case "-":
+            return sub(a,b);
+        case "*":
+            return mult(a,b);
+        case "/":
+        case ":":
+            return div(a,b);
+        default:
+            return ERROR_STR_GEN;
+    }
     
 
-// }
+}
 
 
 
